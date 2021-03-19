@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1321
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "neicunguanli", "neicunguanli\neicunguanli.vcxproj", "{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Debug|x64.ActiveCfg = Debug|x64
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Debug|x64.Build.0 = Debug|x64
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Debug|x86.ActiveCfg = Debug|Win32
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Debug|x86.Build.0 = Debug|Win32
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Release|x64.ActiveCfg = Release|x64
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Release|x64.Build.0 = Release|x64
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Release|x86.ActiveCfg = Release|Win32
+		{DB1578CE-B0CE-44F2-8D59-155CAA6FD6EC}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30323405-B801-4CEB-BABF-F5850D6588C0}
+	EndGlobalSection
+EndGlobal

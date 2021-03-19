@@ -1,0 +1,124 @@
+二叉树题
+1.单值二叉树965
+如果二叉树每个节点都具有相同的值，那么该二叉树就是单值二叉树。只有给定的树是单值二叉树时，才返回 true；否则返回 false。
+链接：https://leetcode-cn.com/problems/univalued-binary-tree/
+
+bool _isUnivalTree(struct TreeNode* root,int val){
+    if(root)
+    {
+        return root->val == val && _isUnivalTree(root->left,val) && _isUnivalTree(root->right,val);
+    }
+    return true;
+}
+bool isUnivalTree(struct TreeNode* root){
+    if(root==NULL)
+        return true;
+    return _isUnivalTree(root,root->val);
+}
+
+2.二叉树最大深度104
+链接：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/submissions/
+
+int maxDepth(struct TreeNode* root){
+    if(root == NULL)
+        return 0;
+    int left = maxDepth(root->left);
+    int right = maxDepth(root->right);
+    return left > right ? left+1 : right+1;
+}
+
+3.翻转二叉树226
+链接：https://leetcode-cn.com/problems/invert-binary-tree/
+
+struct TreeNode* invertTree(struct TreeNode* root)
+{
+	if (root == NULL)
+		return NULL;
+	struct TreeNode* tmp = root->left;
+	root->left = root->right;
+	root->right = tmp;
+	invertTree(root->left);
+	invertTree(root->right);
+	return root;
+}
+
+4.检查两棵树是否相同100
+如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+链接：https://leetcode-cn.com/problems/same-tree/
+
+bool isSameTree(struct TreeNode* p, struct TreeNode* q){
+    if(p==NULL&&q==NULL)
+        return true;
+    if(p==NULL||q==NULL)
+        return false;
+    return p->val==q->val && isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
+}
+
+5.对称二叉树101
+给定一个二叉树，检查它是否是镜像对称的
+链接：https://leetcode-cn.com/problems/symmetric-tree/
+
+bool _issym(struct TreeNode* left,struct TreeNode* right)
+{
+    if(left==NULL&&right==NULL)
+        return true;
+    if(left==NULL||right==NULL)
+        return false;
+    return left->val==right->val && _issym(left->left,right->right) &&_issym(left->right,right->left);
+}
+
+bool isSymmetric(struct TreeNode* root){
+    if(root==NULL)
+        return true;
+    return _issym(root->left,root->right);
+}
+
+6.另一棵树的子树572
+给定两个非空二叉树 s 和 t，检验 s 中是否包含和 t 具有相同结构和节点值的子树。s 的一个子树包括 s 的一个节点和这个节点的所有子孙。s 也可以看做它自身的一棵子树。
+链接：https://leetcode-cn.com/problems/subtree-of-another-tree/
+
+bool isSameTree(struct TreeNode* p, struct TreeNode* q){
+    if(p==NULL&&q==NULL)
+        return true;
+    if(p==NULL||q==NULL)
+        return false;
+    return p->val==q->val && isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
+}
+bool isSubtree(struct TreeNode* s, struct TreeNode* t){
+    if(s==NULL)
+        return false;
+    if(t==NULL)
+        return true;
+    if(isSameTree(s,t))
+        return true;
+    if(isSubtree(s->left,t)){
+        return true;
+    }
+    if(isSubtree(s->right,t)){
+        return true;
+    }
+    return false;
+}
+
+7.判断一棵树是否为平衡二叉树110
+给定一个二叉树，判断它是否是高度平衡的二叉树。
+本题中，一棵高度平衡二叉树定义为：一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1 。
+链接：https://leetcode-cn.com/problems/balanced-binary-tree/
+
+int getheight(struct TreeNode* root)
+{
+    if(root)
+    {
+        int left=getheight(root->left);
+        int right=getheight(root->right);
+        return left>right?left+1:right+1;
+    }
+    return 0;
+}
+bool isBalanced(struct TreeNode* root){
+    if(root==NULL)
+        return true;
+    int left=getheight(root->left);
+    int right=getheight(root->right);
+    return abs(left-right)<2 && isBalanced(root->left) && isBalanced(root->right);
+}

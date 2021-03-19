@@ -1,0 +1,48 @@
+﻿  sort.c
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(347): warning C4013: “memcpy”未定义；假设外部返回 int
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(365): warning C4013: “IsEmpty”未定义；假设外部返回 int
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(754): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(790): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(790): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(790): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(795): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(795): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(795): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(800): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(800): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(800): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(805): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(805): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(805): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(810): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(810): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(810): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(815): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(815): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(815): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(820): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(820): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(820): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(825): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(825): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(825): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(830): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(830): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(830): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(835): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(835): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(835): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(840): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(840): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(840): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(845): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(845): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(845): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(850): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(850): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(850): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(855): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“time_t”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(855): note: 请考虑在格式字符串中使用“%lld”
+  d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(855): note: 请考虑在格式字符串中使用“%I64d”
+d:\wangmei1103\软件\ds\数据结构\sort\sort\sort.c(532): warning C4716: “creatNode”: 必须返回一个值
+  sort.vcxproj -> D:\wangmei1103\软件\DS\数据结构\sort\Debug\sort.exe
