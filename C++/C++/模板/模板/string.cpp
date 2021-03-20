@@ -2,10 +2,7 @@
 #include<string>
 using namespace std;
 
-void test11()
-{
-	
-}
+
 void test10()
 {
 	string str = "123";
@@ -225,9 +222,35 @@ void test0()
 	char ch2 = str[10];
 	//st接口越界：抛异常
 	char ch3 = str.at(10);
-}
+}/*
 int main()
 {
 	test10();
 	return 0;
+}*/
+int main(int argc, char *argv[])
+{
+	string a = "hello world";
+	string b = a;
+	if (a.c_str() == b.c_str())
+	{
+		cout << "true" << endl;
+	}
+	else cout << "false" << endl;
+	string c = b;
+	c = "";
+	if (a.c_str() == b.c_str())
+	{
+		cout << "true" << endl;
+	}
+	else cout << "false" << endl;
+	a = " ";
+	if (a.c_str() == b.c_str())
+	{
+		cout << "true" << endl;
+	}
+	else cout << "false" << endl;
+	return 0;
+
 }
+
