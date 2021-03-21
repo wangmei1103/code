@@ -7,11 +7,11 @@ void test14()
 	size_t pos;
 	pos = str.find_first_of("abc",0); //4 匹配第一个字符a
 	cout << pos << endl;
-	pos = str.find_last_of("123",str.size()); //10 匹配最后一个字符3
+	pos = str.find_last_of("123"); //10 匹配最后一个字符3
 	cout << pos << endl;
 	pos = str.find_first_not_of("123a",0); // 3 返回在字符串中首次不匹配123a的字符索引
 	cout << pos << endl;
-	pos = str.find_last_not_of("389", str.size()); //13 返回在字符串中最后一次不匹配389的字符索引
+	pos = str.find_last_not_of("389"); //13 返回在字符串中最后一次不匹配389的字符索引
 	cout << pos << endl;
 }
 
