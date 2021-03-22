@@ -1,3 +1,4 @@
+/*
 #include<iostream>
 #include<string>
 using namespace std;
@@ -290,3 +291,4 @@ int main()
 	test14();
 	return 0;
 }
+*/
