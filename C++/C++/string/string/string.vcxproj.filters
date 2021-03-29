@@ -15,10 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="string.cpp">
+    <ClCompile Include="..\..\string.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="string2.cpp">
+    <ClCompile Include="..\..\string2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

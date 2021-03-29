@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E3D6BE8F-9F10-49C6-A232-2F23FC1E73A8}</ProjectGuid>
+    <ProjectGuid>{A7BAC3ED-ECBD-4F54-987C-925FC275EEF3}</ProjectGuid>
     <RootNamespace>string</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -123,8 +123,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="string.cpp" />
-    <ClCompile Include="string2.cpp" />
+    <ClCompile Include="..\..\string.cpp" />
+    <ClCompile Include="..\..\string2.cpp" />
+    <ClCompile Include="..\..\string3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
