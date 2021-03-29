@@ -1,6 +1,2 @@
 ﻿  string.cpp
-  string2.cpp
-  string3.cpp
-d:\code\c++\c++\string3.cpp(13): warning C4267: “初始化”: 从“size_t”转换到“char”，可能丢失数据
-  正在生成代码...
   string.vcxproj -> D:\code\C++\C++\string\Debug\string.exe
