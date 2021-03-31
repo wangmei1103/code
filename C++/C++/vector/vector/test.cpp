@@ -1,10 +1,54 @@
 #include<vector>
 #include<iostream>
+#include<assert.h>
 using namespace std;
-void test()
+
+template <class T>
+class Vector
 {
-	
-}
+public:
+
+
+
+
+
+
+	void insert(iterator pos, const T& val)
+	{
+		assert(pos >= _start && <= _finish);
+		if (_finish == _endOfStorage)
+		{
+			size_t offset = pos - _start;
+			size_t newC = _endOfStorage() == nullptr ? 1 : 2 * capacity();
+			reserve(newC);
+			pos = _start + offset;
+		}
+		iterator end = _finish;
+		while (end >= pos)
+		{
+			*end = *(end - 1);
+			--end;
+		}
+		*pos = val;
+		++_finish;
+	}
+	iterator erase(iterator pos)
+	{
+		assert(pos >= _start && pos < _finish);
+		iterator start = pos + 1;
+		while (start != _finish)
+		{
+			*(start - 1) = *start;
+			++start;
+		}
+		--_finish;
+		return pos;
+	}
+private:
+	iterator _start;
+	iterator _finish;
+	iterator _endOfStorage;
+};
 
 
 
