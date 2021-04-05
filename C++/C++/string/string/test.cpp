@@ -326,15 +326,15 @@ private:
 	static const size_t npos;
 };
 
-ostream& operator<<(ostream& out, const String& str)
+ostream& operator<<(ostream& _cout, const String& str)
 {
 	for (const auto& ch : str)
 	{
-		out << ch;
+		_cout << ch;
 	}
-	return out;
+	return _cout;
 }
-istream& operator>>(istream& in, String& str)
+istream& operator>>(istream& _cin, String& str)
 {
 	char ch;
 	while (ch = getchar())
@@ -345,7 +345,7 @@ istream& operator>>(istream& in, String& str)
 		}
 		str += ch;
 	}
-	return in;
+	return _cin;
 }
 
 void test()
