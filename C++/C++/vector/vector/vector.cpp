@@ -35,7 +35,7 @@ public:
 		return _endOfStorage - _start;
 	}
 
-	/*void insert(iterator pos, const T& val)
+	void insert(iterator pos, const T& val)
 	{
 		assert(pos >= _start && <= _finish);
 		
@@ -54,7 +54,7 @@ public:
 		}
 		*pos = val;
 		++_finish;
-	}*/
+	}
 	iterator erase(iterator pos)
 	{
 		assert(pos >= _start && pos < _finish);
