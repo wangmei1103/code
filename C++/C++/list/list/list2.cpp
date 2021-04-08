@@ -22,6 +22,7 @@ class List
 public:
 	typedef ListNode<T> Node;
 	typedef Node* pNode;
+	//无参构造
 	List()
 		:_header(new Node())
 	{
@@ -48,6 +49,7 @@ public:
 			++first;
 		}
 	}
+	//尾插
 	void pushBack(const T& val)
 	{
 		Node* prev = _header->_prev;
@@ -69,6 +71,8 @@ public:
 				delete node;
 				node = next;
 			}
+			delete _header;
+			_header = nullptr;
 		}
 	}
 private:
@@ -79,6 +83,7 @@ private:
 void test()
 {
 	List<int> lst;
+
 	lst.pushBack(1);
 	lst.pushBack(2);
 	lst.pushBack(3);
@@ -88,6 +93,7 @@ void test()
 	string str = "1234567";
 	List<char> lst3(str.begin(), str.end());
 }
+
 int main()
 {
 	test();
