@@ -76,7 +76,7 @@
 //	//插入不会导致迭代器失效
 //	cout << *it << endl;
 //	//删除迭代器会失效，需要重新获取
-//	//erase返回值：迭代器-》被删除元素的下一个元素的位置
+//	//erase返回值：迭代器->被删除元素的下一个元素的位置
 //	it = lst.erase(it);
 //	cout << *it << endl;
 //	//lst.clear();
@@ -153,11 +153,15 @@
 //}
 //void test1()
 //{
+//	//构造空的list
 //	list<int> lst;
 //	list<char> lst2;
+//	//构造list中包含n个值
 //	list<int> lst3(3, 5);//555
+//	//用[begin, end]左闭右开的区间构造
 //	string str = "123456";
 //	list<char> lst4(str.begin(), str.end());//123456
+//	//以数组为迭代器区间构造
 //	char arr[] = "abcd";
 //	list<char> lst5(arr, arr + sizeof(arr) / sizeof(arr[0]));//abcd\0
 //}

@@ -19,7 +19,6 @@
 ////迭代器解引用*：node->data
 ////迭代器++：node->next
 ////list迭代器实现：自定义类型，封装节点
-////迭代器
 ////迭代器类型
 //template<class T>
 //struct ListIterator
