@@ -1,34 +1,34 @@
-//#include<iostream>
-//#include<list>
-//#include<string>
-//using namespace std;
-//
-//template<class T>
-//void printList(const list<T>& lst)
-//{
-//
-//	for (const auto& e : lst)
-//	{
-//		cout << e << " ";
-//	}
-//	cout << endl;
-//}
-//bool compareList(const int& a, const int& b)
-//{
-//	return a > b;
-//}
+#include<iostream>
+#include<list>
+#include<string>
+using namespace std;
+
+template<class T>
+void printList(const list<T>& lst)
+{
+
+	for (const auto& e : lst)
+	{
+		cout << e << " ";
+	}
+	cout << endl;
+}
+bool compareList(const int& a, const int& b)
+{
+	return a > b;
+}
+void test()
+{
+	int arr[] = { 10,2,5,3,6 };
+	int arr2[] = { 23,5,36,7,8 };
+	list<int> lst(arr, arr + 5);
+	list<int> lst2(arr2, arr2 + 5);
+	lst.sort();
+	lst2.sort();
+	lst.merge(lst2);
+	printList(lst); //2 3 5 5 6 7 8 10 23 36
+}
 //void test()
-//{
-//	int arr[] = { 10,2,5,3,6 };
-//	int arr2[] = { 23,5,36,7,8 };
-//	list<int> lst(arr, arr + 5);
-//	list<int> lst2(arr2, arr2 + 5);
-//	lst.sort();
-//	lst2.sort();
-//	lst.merge(lst2);
-//	printList(lst); //2 3 5 5 6 7 8 10 23 36
-//}
-//void test4()
 //{
 //	string s = "123";
 //	string s2 = "abc";
@@ -36,25 +36,25 @@
 //	list<char> lst2(s2.begin(), s2.end());
 //	//lst.splice(lst.begin(), lst2);//a b c 1 2 3
 //	lst.splice(lst.begin(), lst2, ++lst2.begin(), lst2.end()); //b c 1 2 3
-//	printList(lst);
-//	printList(lst2);
-//	lst.remove('f');
-//	printList(lst);
-//	lst.push_back('1');
-//	lst.push_back('2');
+//	printList(lst); //b c 1 2 3 
+//	printList(lst2); //a
+//	lst.remove('b');
+//	printList(lst); //c 1 2 3
+//	lst.push_back('1'); 
+//	lst.push_back('2'); 
 //	lst.push_back('3');
 //	lst.push_back('a');
 //	lst.push_back('b');
-//	printList(lst);
+//	printList(lst); //c 1 2 3 1 2 3 a b
 //	//unique：在数据有序的情况下进行元素的去重
 //	lst.unique();
-//	printList(lst);
+//	printList(lst); //c 1 2 3 1 2 3 a b
 //	lst.sort(compareList);
-//	printList(lst);
+//	printList(lst); //c b a 3 3 2 2 1 1
 //	lst.unique();
-//	printList(lst);
+//	printList(lst); //c b a 3 2 1
 //}
-//void test3()
+//void test()
 //{
 //	list<int> lst;
 //	lst.push_front(1);
@@ -86,13 +86,13 @@
 //	{
 //		cout << e << " ";
 //	}
-//	cout << endl;
+//	cout << endl; //-2 -1 1 2
 //	lst.resize(6, 100);
 //	for (const auto& e : lst)
 //	{
 //		cout << e << " ";
 //	}
-//	cout << endl;
+//	cout << endl; //-2 -1 1 2 100 100
 //
 //}
 //
@@ -166,8 +166,8 @@
 //	list<char> lst5(arr, arr + sizeof(arr) / sizeof(arr[0]));//abcd\0
 //}
 //
-//int main()
-//{
-//	test();
-//	return 0;
-//}
+int main()
+{
+	test();
+	return 0;
+}

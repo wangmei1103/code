@@ -3,11 +3,11 @@
 //#include<vector>
 //#include<list>
 //using namespace std;
-////stack实现
-////顺序表：
-////push:push_back-->尾插
-////pop:pop_back-->尾删
-////top:back-->获取最后一个元素
+//stack实现
+//顺序表：
+//push:push_back-->尾插
+//pop:pop_back-->尾删
+//top:back-->获取最后一个元素
 //链表：单链表
 //push:push_front-->尾删
 //pop:pop_front-->头删
