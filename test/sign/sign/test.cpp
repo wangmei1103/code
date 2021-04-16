@@ -64,7 +64,13 @@ void test3()
 		printf("Fourth=%d", i);
 	}*/
 
-	
+	//贪心法
+	int a = 0;
+	int b = 1;
+	cout << a++ + b << endl; //解析为a后置加加后，加上b
+
+	cout << 2 / (-2) << endl; //-1 除
+	cout << 2 % (-2) << endl; //0  取模（余数）
 } 
 
 int main()

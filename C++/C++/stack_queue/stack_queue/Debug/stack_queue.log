@@ -1,19 +1,2 @@
-﻿  deque.cpp
-d:\code\c++\c++\stack_queue\stack_queue\deque.cpp(102): warning C4018: “<”: 有符号/无符号不匹配
-  d:\code\c++\c++\stack_queue\stack_queue\deque.cpp(99): note: 编译 类 模板 成员函数 "void PriorityQueue<int,std::vector<int,std::allocator<_Ty>>,Greater<int>>::shiftDown(void)" 时
-          with
-          [
-              _Ty=int
-          ]
-  d:\code\c++\c++\stack_queue\stack_queue\deque.cpp(152): note: 参见对正在编译的函数 模板 实例化“void PriorityQueue<int,std::vector<int,std::allocator<_Ty>>,Greater<int>>::shiftDown(void)”的引用
-          with
-          [
-              _Ty=int
-          ]
-  d:\code\c++\c++\stack_queue\stack_queue\deque.cpp(172): note: 参见对正在编译的 类 模板 实例化 "PriorityQueue<int,std::vector<int,std::allocator<_Ty>>,Greater<int>>" 的引用
-          with
-          [
-              _Ty=int
-          ]
-d:\code\c++\c++\stack_queue\stack_queue\deque.cpp(105): warning C4018: “<”: 有符号/无符号不匹配
+﻿  practice.cpp
   stack_queue.vcxproj -> D:\code\C++\C++\stack_queue\Debug\stack_queue.exe

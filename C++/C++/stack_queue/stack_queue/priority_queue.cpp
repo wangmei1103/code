@@ -68,7 +68,7 @@
 //	{
 //		return arr.front();
 //	}
-//	size_t aize()const
+//	size_t size()const
 //	{
 //		return arr.size();
 //	}

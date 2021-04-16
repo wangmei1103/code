@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="deque.cpp" />
+    <ClCompile Include="practice.cpp" />
     <ClCompile Include="priority_queue.cpp" />
     <ClCompile Include="queue.cpp" />
     <ClCompile Include="stack.cpp" />

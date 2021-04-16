@@ -1,8 +1,8 @@
-//#include<iostream>
-//#include<stack>
-//#include<queue>
-//#include<functional>
-//using namespace std;
+#include<iostream>
+#include<stack>
+#include<queue>
+#include<functional>
+using namespace std;
 
 //priority_queue
 //class A
@@ -23,9 +23,9 @@
 //void test()
 //{
 //	//默认大堆实现
-//	//priority_queue<int> pq;
+//	priority_queue<int> pq;
 //	//小堆
-//	priority_queue<int, vector<int>, greater<int>> pq;
+//	//priority_queue<int, vector<int>, greater<int>> pq;
 //	pq.push(8);
 //	pq.push(9);
 //	pq.push(3);
@@ -36,7 +36,6 @@
 //		pq.pop();
 //	}
 //	cout << endl; 
-//
 //}
 
 //queue
