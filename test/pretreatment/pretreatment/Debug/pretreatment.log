@@ -1,0 +1,8 @@
+﻿  test.cpp
+d:\code\test\pretreatment\pretreatment\test.cpp(69): warning C4477: “printf”: 格式字符串“%p”需要类型“void *”的参数，但可变参数 1 拥有了类型“unsigned int”
+d:\code\test\pretreatment\pretreatment\test.cpp(69): warning C4477: “printf”: 格式字符串“%p”需要类型“void *”的参数，但可变参数 2 拥有了类型“unsigned int”
+d:\code\test\pretreatment\pretreatment\test.cpp(69): warning C4477: “printf”: 格式字符串“%p”需要类型“void *”的参数，但可变参数 3 拥有了类型“unsigned int”
+d:\code\test\pretreatment\pretreatment\test.cpp(69): warning C4477: “printf”: 格式字符串“%p”需要类型“void *”的参数，但可变参数 4 拥有了类型“unsigned int”
+d:\code\test\pretreatment\pretreatment\test.cpp(75): warning C4068: 未知的杂注
+d:\code\test\pretreatment\pretreatment\test.cpp(87): warning C4068: 未知的杂注
+  pretreatment.vcxproj -> D:\code\test\pretreatment\Debug\pretreatment.exe
