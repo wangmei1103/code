@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\code\test\pointer_array\pointer_array\test.cpp(33): warning C4101: “p1”: 未引用的局部变量
+d:\code\test\pointer_array\pointer_array\test.cpp(34): warning C4101: “p2”: 未引用的局部变量
+  Pointer_Array.vcxproj -> D:\code\test\Pointer_Array\Debug\Pointer_Array.exe
