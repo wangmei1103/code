@@ -1,7 +1,7 @@
-//#include<iostream>
-//#include<string>
-//using namespace std;
-//
+#include<iostream>
+#include<string>
+using namespace std;
+
 ////类模板特化: 应用场景：类型萃取
 ////前提：已有一个通用的模板
 //template<class T1,class T2>
@@ -17,7 +17,7 @@
 //	T1 _d1;
 //	T2 _d2;
 //};
-////特化
+////全特化
 //template<>
 //struct D<char, double>
 //{
@@ -86,11 +86,15 @@
 //void test()
 //{
 //	bool ret = isEqual(1, 2); //false
+//	cout << ret << endl;
 //	ret = isEqual(2.3, 2.3); //true
+//	cout << ret << endl;
 //	ret = isEqual("123", "123"); //true
+//	cout << ret << endl;
 //	const char* ptr = "123";
 //	char ptr2[] = "123";
 //	ret = isEqual(ptr, ptr2); 
+//	cout << ret << endl; //true
 //}
 //
 //int main()

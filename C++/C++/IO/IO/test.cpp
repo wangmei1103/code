@@ -6,7 +6,7 @@ using namespace std;
 #pragma warning(disable:4996)
 void test()
 {
-	//aoti atof
+	
 	int a = 10;
 	int b = 010; //8
 	int c = 0x10; //16
@@ -17,7 +17,7 @@ void test()
 	sprintf(arr, "%d", a);
 	float f = 2.3;
 	sprintf(arr, "%f", f);
-	printf("%d", a);
+	printf("%d\n", a);
 
 	stringstream ss;
 	string str;
@@ -41,56 +41,55 @@ void test()
 	cout << ss.str() << endl;
 }
 
-struct Student
-{
-	char name[10];
-	int age;
-};
-
+//struct Student
+//{
+//	char name[10];
+//	int age;
+//};
+//
 //void test()
 //{
-	//ofstream:输出文件流
-	//ifstream：输入文件流
-	//写文件：文件不存在，创建文件
-	//ofstream fout("test.txt");
-	////fout.open("test.txt");
-	//if (!fout.is_open())
-	//	cout << "file not open" << endl;
-	////写内容
-	////1.文本形式:字符流读写
-	//fout << "test.txt" << endl;
-	//fout.put(' ');
-	//fout.put('a');
-	//fout.close();
-
-	//读文件：文件不存在，打开失败
-	//ifstream fin("test.txt");
-	//char arr[100];
-	////fin >> arr;
-	//char ch;
-	//ch = fin.get();
-	//fin.get(ch);
-	////fin.get(arr, 100);
-	//fin.getline(arr, 10);
-
-
-	//ofstream fout("test.txt");
-	//Student stu;
-	//stu.age = 30;
-	//strcpy(stu.name, "abc");
-	//fout << stu.name << endl;
-	//fout << stu.age << endl;
-	//fout.close();
-	////二进制读写 ：字节流读写
-	//ofstream fout2("test.binary.txt");
-	//fout2.write((char*)&stu, sizeof(stu));
-	//fout2.close();
-
-	//ifstream fin("test.binary.txt");
-	//Student stu;
-	///*fin >> stu.name;
-	//fin >> stu.age;*/
-	//fin.read((char*)&stu, sizeof(stu));
+//	//ofstream:输出文件流
+//	//ifstream：输入文件流
+//	//写文件：文件不存在，创建文件
+//	ofstream fout("test.txt");
+//	//fout.open("test.txt");
+//	if (!fout.is_open())
+//		cout << "file not open" << endl;
+//	//写内容
+//	//1.文本形式:字符流读写
+//	fout << "test.txt" << endl;
+//	fout.put(' ');
+//	fout.put('a');
+//	fout.close();
+//
+//	//读文件：文件不存在，打开失败
+//	ifstream fin("test.txt");
+//	char arr[100];
+//	//fin >> arr;
+//	char ch;
+//	ch = fin.get();
+//	fin.get(ch);
+//	//fin.get(arr, 100);
+//	fin.getline(arr, 10);
+//
+//	ofstream fout1("test.txt");
+//	Student stu;
+//	stu.age = 30;
+//	strcpy(stu.name, "abc");
+//	fout1 << stu.name << endl;
+//	fout1 << stu.age << endl;
+//	fout1.close();
+//	//二进制读写 ：字节流读写
+//	ofstream fout2("test.binary.txt");
+//	fout2.write((char*)&stu, sizeof(stu));
+//	fout2.close();
+//
+//	ifstream fin1("test.binary.txt");
+//	Student stu1;
+//	/*fin >> stu.name;
+//	fin >> stu.age;*/
+//	fin.read((char*)&stu1, sizeof(stu1));
 //}
 
 
@@ -128,8 +127,11 @@ struct Student
 //		cout << a << endl;
 //	}
 //}
+
 int main()
 {
 	test();
+	//test1();
+
 	return 0;
 }
