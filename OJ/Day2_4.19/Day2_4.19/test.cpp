@@ -1,7 +1,7 @@
-//#include<iostream>
-//using namespace std;
-//#include<string>
-//#include<algorithm>
+#include<iostream>
+using namespace std;
+#include<string>
+#include<algorithm>
 //int main()
 //{
 //	string str;
@@ -15,7 +15,7 @@
 //		if (*it == ' ')
 //		{
 //			reverse(it1, it);
-//			it1 = it + 1;
+//			it1 = it + 1
 //		}
 //		it++;
 //	}
@@ -25,33 +25,31 @@
 
 
 
-#include<iostream>
-using namespace std;
+
 #include<vector>
-int main()
-{
-	int n;
-	cin >> n;
-	vector<int> A(n);
-	for (int i = 0; i < n; i++)
-	{
-		cin >> A[i];
-	}
-	int count = 0;
-	for (int i = 1; i < n - 1; i++)
-	{
-		if ((A[i - 1] <= A[i] && A[i + 1] <= A[i]) || (A[i - 1] >= A[i] && A[i + 1] >= A[i]))
-		{
-			count++;
-		}
-	}
-	cout << count << endl;
-	return 0;
-}
+//int main()
+//{
+//	int n;
+//	cin >> n;
+//	vector<int> A(n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		cin >> A[i];
+//	}
+//	int count = 0;
+//	for (int i = 1; i < n - 1; i++)
+//	{
+//		if ((A[i - 1] <= A[i] && A[i + 1] <= A[i]) || (A[i - 1] >= A[i] && A[i + 1] >= A[i]))
+//		{
+//			count++;
+//		}
+//	}
+//	cout << count << endl;
+//	return 0;
+//}
 
 
-//#include<iostream>
-//using namespace std;
+
 //
 //int main()
 //{
@@ -117,6 +115,7 @@ int main()
 //	int *b = a;
 //	*b += 2;
 //	*(b + 2) = 2;
+//	b++;
 //	cout << *b << " " << *(b + 2) << endl;
 //	return 0;
 //}
