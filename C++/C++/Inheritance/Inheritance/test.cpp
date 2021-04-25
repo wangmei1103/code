@@ -2,37 +2,41 @@
 #include<string>
 using namespace  std;
 
-struct A
-{
-	int _a;
-};
-struct B :virtual public A
-{
-	int _b;
-};
-struct C :virtual public A
-{
-	int _c;
-};
-struct D :public B, public C
-{
-	int _d;
-};
-void test()
-{
-	D d;
-	d.B::_a = 1;
-	d._b = 2;
-	d.C::_a = 3;
-	d._c = 4;
-	d._d = 5;
+//class A
+//{
+//public:
+//	int _a;
+//};
+//class B : virtual public A
+//{
+//public:
+//	int _b;
+//};
+//class C : virtual public A
+//{
+//public:
+//	int _c;
+//};
+//class D : public B, public C
+//{
+//public:
+//	int _d;
+//};
+//void test()
+//{
+//	D d;
+//	d.B::_a = 1;
+//	d._b = 2;
+//	d.C::_a = 3;
+//	d._c = 4;
+//	d._d = 5;
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
 
-}
-
-int main()
-{
-
-}
 ////菱形虚拟继承
 //class Person
 //{
@@ -128,8 +132,7 @@ int main()
 //int A::_a = 0;
 //class B :public A
 //{};
-////多继承： 继承方式  类名，继承方式  类名，...
-//class C:public B,public A
+//class C :public B
 //{};
 //void test()
 //{

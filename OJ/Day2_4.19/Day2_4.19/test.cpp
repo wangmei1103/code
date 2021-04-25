@@ -119,3 +119,12 @@ using namespace std;
 //	cout << *b << " " << *(b + 2) << endl;
 //	return 0;
 //}
+
+//int main()
+//{
+//	float a[3][4];
+//	cout << a[2][2] << endl;
+//	cout << *(a[2] + 2) << endl;
+//	cout << *(*(a + 2) + 2) << endl;
+//	cout << *(*a + 2 * 4 + 2) << endl;
+//}
