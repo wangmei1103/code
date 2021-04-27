@@ -2,6 +2,45 @@
 #include<string>
 using namespace  std;
 
+//×éºÏ
+//class Tire 
+//{
+//protected:
+//	string _brand = "Michelin";
+//	size_t _size = 17;
+//};
+//class Car
+//{
+//protected:
+//	string _color = "white";
+//	string _num = "ÉÂAB5678";
+//	Tire _t;
+//};
+
+//¼Ì³Ð
+//class Car
+//{
+//protected:
+//	string _color = "white";
+//	string _num = "ÉÂAB5678";
+//};
+//class BMW : public Car
+//{
+//public:
+//	void Drive()
+//	{
+//		cout << "ºÃ¿ª-²Ù¿Ø" << endl;
+//	}
+//};
+//class Benz : public Car
+//{
+//public:
+//	void Drive()
+//	{
+//		cout << "ºÃ×ø-ÊæÊÊ" << endl;
+//	}
+//};
+
 //class A
 //{
 //public:
@@ -35,6 +74,7 @@ using namespace  std;
 //{
 //	test();
 //	return 0;
+
 //}
 
 ////ÁâÐÎÐéÄâ¼Ì³Ð
