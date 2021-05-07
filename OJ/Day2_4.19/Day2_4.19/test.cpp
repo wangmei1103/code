@@ -88,11 +88,11 @@ using namespace std;
 
 //struct A
 //{
-//	unsigned a : 19;
-//	unsigned b : 11;
-//	unsigned c : 4;
-//	unsigned d : 29;
-//	char index;
+//	unsigned a : 19; //4
+//	unsigned b : 11; //4
+//	unsigned c : 4;  //8
+//	unsigned d : 29; //12
+//	char index;      //16
 //};
 //int main()
 //{
@@ -127,4 +127,13 @@ using namespace std;
 //	cout << *(a[2] + 2) << endl;
 //	cout << *(*(a + 2) + 2) << endl;
 //	cout << *(*a + 2 * 4 + 2) << endl;
+//}
+//#define N 10
+//int main()
+//{
+//	int a[N];
+//	const int n = 10;
+//	int a2[n];
+//	int a3[3 + 4];
+//	return 0;
 //}
