@@ -34,63 +34,64 @@ using namespace std;
 //		return result * sign;
 //	}
 //};
-bool NotNumber(char ch)
-{
-	if (ch < '0' || ch > '9')
-		return true;
-	else
-		return false;
-}
-int StrToInt(string str)
-{
-	int length = str.size();
-	int flag = 1;
-	if (!length)
-	{
-		flag = 0;
-		//cout << "0" << endl;
-	}
-	if (str[0] != '+' && str[0] != '-' && NotNumber(str[0]))
-	{
-		flag = 0;
-		//cout << "0" << endl;
-	}
-	int ret = 0;
-	
-	int i = 0;
-	if (str[0] == '+')
-	{
-		flag = 1;
-		i = 1;
-	}
-	if (str[0] == '-')
-	{
-		flag = -1;
-		i = 1;
-	}
-	for (; i < length; i++)
-	{
-		if (NotNumber(str[i]))
-		{
-
-			flag = 0;
-			break;
-		}
-		else
-		{
-			ret = ret * 10 + str[i] - '0';
-		}
-	}
-	cout << ret * flag << endl;
-	return 0;
-}
-
-int main()
-{
-	string str;
-	StrToInt(str);
-	return 0;
-}
+//bool NotNumber(char ch)
+//{
+//	if (ch < '0' || ch > '9')
+//		return true;
+//	else
+//		return false;
+//}
+//int StrToInt(string str)
+//{
+//	int length = str.size();
+//	int flag = 1;
+//	if (!length)
+//	{
+//
+//		flag = 0;
+//		//cout << "0" << endl;
+//	}
+//	if (str[0] != '+' && str[0] != '-' && NotNumber(str[0]))
+//	{
+//		flag = 0;
+//		//cout << "0" << endl;
+//	}
+//	int ret = 0;
+//	
+//	int i = 0;
+//	if (str[0] == '+')
+//	{
+//		flag = 1;
+//		i = 1;
+//	}
+//	if (str[0] == '-')
+//	{
+//		flag = -1;
+//		i = 1;
+//	}
+//	for (; i < length; i++)
+//	{
+//		if (NotNumber(str[i]))
+//		{
+//
+//			flag = 0;
+//			break;
+//		}
+//		else
+//		{
+//			ret = ret * 10 + str[i] - '0';
+//		}
+//	}
+//	cout << ret * flag << endl;
+//	return 0;
+//}
+//
+//int main()
+//{
+//	string str;
+//	StrToInt(str);
+//	return 0;
+//}
 
 //#include<iostream>
 //using namespace std;
@@ -145,18 +146,18 @@ int main()
 //	cout << endl;
 //}
 
-//struct A
-//{
-//	long a1;
-//	short a2;
-//	int a3;
-//	int *a4;
-//};
-//int main()
-//{
-//	cout << sizeof(A) << endl;
-//	return 0;
-//}
+struct A
+{
+	long a1;
+	short a2;
+	int a3;
+	int *a4;
+};
+int main()
+{
+	cout << sizeof(A) << endl;
+	return 0;
+}
 
 //char fun(char x, char y)
 //{
