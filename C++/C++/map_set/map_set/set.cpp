@@ -1,9 +1,37 @@
+
 #include<iostream>
+#include<functional>
 using namespace std;
 #include<set>
 #include<string>
+//void test()
+//{
+//	
+//	int arr[] = { 1,10,2,4,4,2,5,7,4,8,5,9,28 };
+//	//multiset：可以存放重复的数据
+//	multiset<int> s(arr, arr + sizeof(arr) / sizeof(arr[0]));
+//	for (auto& e : s)
+//	{
+//		cout << e << " ";
+//	}
+//	cout << endl;
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
 
-
+/*
+template<class T>
+void printSet2(const set<T, greater<T>>& s)
+{
+	for (auto& e : s)
+	{
+		cout << e << " ";
+	}
+	cout << endl;
+}
 
 template<class T>
 void printSet(const set<T>& s)
@@ -20,8 +48,8 @@ void test1()
 	set<int> s;
 	int arr[] = { 1,2,3,10,2,3,4,4 };
 	//set不存重复数据，天然去重,且有序
-	set<int> s2(arr, arr + sizeof(arr) / sizeof(arr[0]));
-
+	set<int,greater<int>> s2(arr, arr + sizeof(arr) / sizeof(arr[0]));
+	printSet2(s2);
 }
 //递增
 void test()
@@ -76,8 +104,8 @@ void test()
 	//erase：不能传非法位置：比如end
 	//s2.erase(s2.end());不存在
 	printSet(s2);
-	/*s2.erase(++s2.begin(), --s2.end());
-	printSet(s2);*/
+	//s2.erase(++s2.begin(), --s2.end());
+	//printSet(s2);
 	//find
 	auto it1 = s2.find(12);
 	cout << (it1 != s2.end()) << endl;
@@ -91,6 +119,6 @@ void test()
 
 int main()
 {
-	test();
+	test1();
 	return 0;
-}
+}*/
