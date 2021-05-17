@@ -716,7 +716,8 @@ void printArr(int* arr, int n)
 
 void test()
 {
-	int arr[] = { 10,3,8,4,5,6,2,7 };
+	//int arr[] = { 10,3,8,4,5,6,2,7 };
+	int arr[] = { 1,3,2,4,5,6,7,8,9 };
 	//printArr(arr, sizeof(arr) / sizeof(arr[0]));
 	//insertSort(arr, sizeof(arr) / sizeof(arr[0]));
 	//printArr(arr, sizeof(arr) / sizeof(arr[0]));
@@ -748,11 +749,13 @@ void test()
 
 void timetest()
 {
-	int n;
+	/*int n;
 	printf("Êý¾ÝÁ¿: \n");
 	scanf_s("%d", &n);
-	srand(time(NULL));
-	int* arr = (int*)malloc(sizeof(int)*n);
+	srand(time(NULL));*/
+	int arr[] = { 1,3,2,4,5,6,7,8,9 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	//int* arr = (int*)malloc(sizeof(int)*n);
 	int* copy1 = (int*)malloc(sizeof(int)*n);
 	int* copy2 = (int*)malloc(sizeof(int)*n);
 	int* copy3 = (int*)malloc(sizeof(int)*n);
@@ -858,6 +861,6 @@ void timetest()
 int main()
 {
 	test();
-	//timetest();
+	timetest();
 	return 0;
 }
