@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\code\oj\day21_5.18\day21_5.18\test.cpp(13): warning C4018: “<”: 有符号/无符号不匹配
+d:\code\oj\day21_5.18\day21_5.18\test.cpp(30): warning C4018: “<”: 有符号/无符号不匹配
+  Day21_5.18.vcxproj -> D:\code\OJ\Day21_5.18\Debug\Day21_5.18.exe
