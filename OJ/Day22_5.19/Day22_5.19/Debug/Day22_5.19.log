@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\code\oj\day22_5.19\day22_5.19\test.cpp(11): warning C4018: “<”: 有符号/无符号不匹配
+d:\code\oj\day22_5.19\day22_5.19\test.cpp(10): warning C4101: “ch”: 未引用的局部变量
+  Day22_5.19.vcxproj -> D:\code\OJ\Day22_5.19\Debug\Day22_5.19.exe
