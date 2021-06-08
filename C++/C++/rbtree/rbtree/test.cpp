@@ -10,11 +10,10 @@ template<class V>
 struct RBNode
 {
 	//typedef bool color;
-	RBNode<K, V>* _parent;
-	RBNode<K, V>* _left;
-	RBNode<K, V>* _right;
+	RBNode<V>* _parent;
+	RBNode<V>* _left;
+	RBNode<V>* _right;
 	//key-value
-	//pair<K, V> _kv;
 	V _val;
 	//颜色
 	COLOR _color;
@@ -26,20 +25,104 @@ struct RBNode
 		, _color(RED)
 	{}
 };
-//通过V获取其对应的K
+template<class V>
+struct RBTreeIterator
+{
+	typedef RBNode<V> Node;
+	typedef RBTreeIterator<V> Self;
+	Node* _node;
+	RBTreeIterator(Node* node)
+		:_node(node)
+	{}
+	//解引用：*，->
+	V& operator*()
+	{
+		return _node->_val;
+	}
+	V* operator->()
+	{
+		return &_node->_val;
+	}
+	bool operator!=(const Self& it)
+	{
+		return _node != it._node;
+	}
+	//中序遍历
+	Self& operator++()
+	{
+		if (_node->_right)
+		{
+			//右子树的最左节点
+			_node = _node->_right;
+			while (_node->_left)
+				_node = _node->_left;
+		}
+		else
+		{
+			Node* parent = _node->_parent;
+			while (_node == parent->_right)
+			{
+				_node = parent;
+				parent = parent->_parent;
+			}
+			//避免没有右子树的情况
+			if (_node->_right != parent)
+				_node = parent;
+		}
+		return *this;
+	}
+	Self& operator--()
+	{
+		if (_node->_left)
+		{
+			//左子树的最右节点
+			_node - _node->_left;
+			while (_node->_right)
+				_node = _node->_right;
+		}
+		else
+		{
+			Node* parent = _node->_parent;
+			while (_node == parent->_left)
+			{
+				_node = parent;
+				parent = parent->_parent;
+			}
+			//避免没有左子树的情况
+			if (_node->_left != parent)
+				_node = parent;
+		}
+		return *this;
+	}
+};
+//KeyOfValue: 通过V获取其对应的K
 template <class K, class V, class KeyOfValue>
 class RBTree
 {
 public:
 	typedef RBNode<V> Node;
+	typedef RBTreeIterator<V> iterator;
 	RBTree()
 		:_header(new Node)
 	{
 		//创建一个空树
 		_header->_left = _header->_right = _header;
 	}
+	iterator begin()
+	{
+		return iterator(_header->_left);
+	}
+	iterator end()
+	{
+		return iterator(_header);
+	}
+	iterator rbegin()
+	{
+		return iterator(_header->_right);
+	}
 	//插入
-	bool insert(const V& val)
+	//bool insert(const V& val)
+	pair<iterator, bool> insert(const V& val)
 	{
 		//1.搜索树的插入
 		//空树：_header->_parent : nullptr
@@ -52,7 +135,8 @@ public:
 			_header->_left = _header->_right = root;
 			//根节点是黑色
 			root->_color = BLACK;
-			return true;
+			//return true;
+			return make_pair(iterator(root), true);
 		}
 		//从根节点开始搜索
 		Node* cur = _header->_parent;
@@ -67,7 +151,8 @@ public:
 			if(kov(cur->_val) == kov(val))
 			{
 				//key值不允许重复
-				return false;
+				//return false;
+				return make_pair(iterator(cur), false);
 			}
 			//else if (cur->_kv.first > kv.first)
 			else if(kov(cur->_val) > kov(val))
@@ -80,7 +165,8 @@ public:
 			}
 		}
 		//创建待插入的节点
-		cur = new Node(kv);
+		cur = new Node(val);
+		Node* node = cur;
 		//if (parent->_kv.first > cur->_kv.first)
 		if(kov(parent->_val) > kov(cur->_val))
 			parent->_left = cur;
@@ -152,7 +238,8 @@ public:
 		//更新header的左右指向
 		_header->_left = leftMost();
 		_header->_right = rightMost();
-		return true;
+		//return true;
+		return make_pair(iterator(node), true);
 	}
 	void RotateL(Node* parent)
 	{
@@ -184,7 +271,7 @@ public:
 		Node* subL = parent->_left;
 		Node* subLR = subL->_right;
 		subL->_right = parent;
-		parent->_left = subRL;
+		parent->_left = subLR;
 		if (subLR)
 			subLR->_parent = parent;
 		//判断根
@@ -232,7 +319,7 @@ public:
 		if (root)
 		{
 			_inorder(root->_left);
-			cout << root->_kv.first << " ";
+			cout << root->_val.first << " ";
 			_inorder(root->_right);
 		}
 	}
@@ -256,20 +343,107 @@ public:
 				++bCount;
 			cur = cur->_left;
 		}
+		//遍历每一条路径
+		int curBCount = 0;
+		return _isBalance(root, bCount, curBCount);
 	}
-	//删除
-	bool erase()
+	bool _isBalance(Node* root, int& bCount, int curBCount)
 	{
-
+		//当root为空时，一条路径遍历结束
+		if (root == nullptr)
+		{
+			//判断黑色节点个数是否相同
+			if (curBCount != bCount)
+				return false;
+			else
+				return true;
+		}
+		//判断节点是否为黑色
+		if (root->_color == BLACK)
+			++curBCount;
+		//判断是否有红色连续的节点
+		if (root->_parent && root->_color == RED && root->_parent->_color == RED)
+		{
+			cout << "data:" << root->_val.first << endl;
+			return false;
+		}
+		return _isBalance(root->_left, bCount, curBCount) && _isBalance(root->_right, bCount, curBCount);
 	}
+	
 	//成员：_header
 private:
 	Node* _header;
 };
+template<class K, class T>
+class Map
+{
+	struct MapKeyOfValue
+	{
+		const K& operator()(const pair<K, T>& val)
+		{
+			return val.first;
+		}
+	};
+public:
+	typedef typename RBTree<K, pair<K, T>, MapKeyOfValue>::iterator iterator;
+	pair<iterator, bool> insert(const pair<K, T>& kv)
+	{
+		return _rbt.insert(kv);
+	}
+	iterator begin()
+	{
+		return _rbt.begin();
+	}
+	iterator end()
+	{
+		return _rbt.end();
+	}
+	iterator rbegin()
+	{
+		return _rbt.rbegin();
+	}
+	T& operator[](const K& key)
+	{
+		pair<iterator, bool> ret = _rbt.insert(make_pair(key, T()));
+		return ret.first->second;
+	}
+private:
+	typedef RBTree<K, pair<K, T>, MapKeyOfValue> rbt;
+	rbt _rbt;
+};
+template<class K>
+class Set
+{
+	struct SetKeyOfValue
+	{
+		const K& operator()(const K& val)
+		{
+			return val;
+		}
+	};
+
+public:
+	typedef typename RBTree<K, K, SetKeyOfValue>::iterator iterator;
+	pair<iterator, bool> insert(const K& val)
+	{
+		return _rbt.insert(val);
+	}
+private:
+	typedef RBTree<K, K, SetKeyOfValue> rbt;
+	rbt _rbt;
+};
 
 void test()
 {
-
+	Map<int, int> m;
+	m.insert(make_pair(1, 1));
+	m.insert(make_pair(2, 1));
+	m.insert(make_pair(3, 1));
+	m.insert(make_pair(4, 1));
+	Set<int> s;
+	s.insert(1);
+	s.insert(2);
+	s.insert(3);
 }
 //void test()
 //{
