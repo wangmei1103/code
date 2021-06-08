@@ -1,6 +1,7 @@
 #include<iostream>
 #include<utility>
 using namespace std;
+#include<time.h>
 enum COLOR
 {
 	BLACK,
@@ -444,15 +445,9 @@ void test()
 	s.insert(1);
 	s.insert(2);
 	s.insert(3);
+	
 }
-//void test()
-//{
-//	RBTree<int, int> rbt;
-//	rbt.insert(make_pair(10, 10));
-//	rbt.insert(make_pair(15, 15));
-//	rbt.insert(make_pair(5, 5));
-//	rbt.insert(make_pair(2, 2));
-//}
+
 int main()
 {
 	test();
