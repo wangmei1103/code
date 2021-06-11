@@ -437,14 +437,25 @@ private:
 void test()
 {
 	Map<int, int> m;
-	m.insert(make_pair(1, 1));
-	m.insert(make_pair(2, 1));
+	/*m.insert(make_pair(1, 1));
+	m.insert(make_pair(2, 1));*/
 	m.insert(make_pair(3, 1));
 	m.insert(make_pair(4, 1));
-	Set<int> s;
+	m[1] = 1;
+	m[2] = 2;
+	m[3] = 30;
+	m[4] = 400;
+	Map<int, int>::iterator it = m.begin();
+	//Map<int, int>::iterator it = m.rbegin();
+	while (it != m.end())
+	{
+		cout << it->first << " " << it->second << endl;
+		++it;
+	}
+	/*Set<int> s;
 	s.insert(1);
 	s.insert(2);
-	s.insert(3);
+	s.insert(3);*/
 	
 }
 

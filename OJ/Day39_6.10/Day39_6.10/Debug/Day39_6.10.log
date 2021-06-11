@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\code\oj\day39_6.10\day39_6.10\test.cpp(10): warning C4018: “<=”: 有符号/无符号不匹配
+d:\code\oj\day39_6.10\day39_6.10\test.cpp(12): warning C4018: “<=”: 有符号/无符号不匹配
+  Day39_6.10.vcxproj -> D:\code\OJ\Day39_6.10\Debug\Day39_6.10.exe
