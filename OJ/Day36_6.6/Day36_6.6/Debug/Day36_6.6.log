@@ -1,3 +1,0 @@
-﻿  test.cpp
-d:\code\oj\day36_6.6\day36_6.6\test.cpp(62): warning C4244: “参数”: 从“__int64”转换到“long”，可能丢失数据
-  Day36_6.6.vcxproj -> D:\code\OJ\Day36_6.6\Debug\Day36_6.6.exe

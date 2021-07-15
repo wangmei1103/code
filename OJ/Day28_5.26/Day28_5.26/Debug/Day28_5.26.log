@@ -1,6 +1,0 @@
-﻿  test.cpp
-d:\code\oj\day28_5.26\day28_5.26\test.cpp(10): warning C4244: “return”: 从“double”转换到“__int64”，可能丢失数据
-d:\code\oj\day28_5.26\day28_5.26\test.cpp(17): warning C4244: “return”: 从“double”转换到“__int64”，可能丢失数据
-d:\code\oj\day28_5.26\day28_5.26\test.cpp(18): warning C4715: “OldmonkeyPeach”: 不是所有的控件路径都返回值
-d:\code\oj\day28_5.26\day28_5.26\test.cpp(11): warning C4715: “Minpeach”: 不是所有的控件路径都返回值
-  Day28_5.26.vcxproj -> D:\code\OJ\Day28_5.26\Debug\Day28_5.26.exe
