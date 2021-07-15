@@ -41,6 +41,8 @@ public:
 	bool UNCompressFile(const string& strFilePath);
 private:
 	void GenerateCode(HTNode<CharInfo>* root);
+	void WriteFileHead(FILE* fOut, const string& filePath);
+	void GetLine(FILE* fIn, string& szContent);
 private:
 	CharInfo fileInfo[256]; //保存源文件中字符出现的次数信息以及编码
 	//vector<string> _chatInfo;

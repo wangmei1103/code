@@ -47,7 +47,7 @@ bool FileCompress::CompressFile(const string& strFilePath)
 		fclose(pf);
 		return false;
 	}
-
+	WriteFileHead(fOut, strFilePath);
 
 	//A-100 B-101 C-11 D-0
 	//ABBBCCCCCDDDDDDD
@@ -99,6 +99,37 @@ bool FileCompress::CompressFile(const string& strFilePath)
 	return true;
 }
 
+void FileCompress::WriteFileHead(FILE* fOut, const string& filePath)
+{
+	//保存源文件后缀  substr--生成子串
+	string postFix = filePath.substr(filePath.rfind('.')); //默认截取到末尾
+	postFix += "\n";
+	fwrite(postFix.c_str(), 1, postFix.size(), fOut);
+
+	//保存字节频次信息总的行数
+	//保存每行的字符频次信息
+	string charAppear;
+	size_t szLineCount = 0;
+	for (auto& e : fileInfo)
+	{
+		//将出现次数非0次的字符：字符，出现次数\n
+		if (e.appearCount > 0)
+		{
+			charAppear += e.ch;
+			charAppear += ","; //A,
+			charAppear += to_string(e.appearCount); //1234--“1234”
+			charAppear += "\n";
+			szLineCount++;
+		}
+	}
+	string strLineCount = to_string(szLineCount);
+	strLineCount += "\n";
+	fwrite(strLineCount.c_str(), 1, strLineCount.size(), fOut);
+	fwrite(charAppear.c_str(), 1, charAppear.size(), fOut);
+
+}
+
+
 void FileCompress::GenerateCode(HTNode<CharInfo>* root)
 {
 	if (root == NULL)
@@ -125,4 +156,97 @@ void FileCompress::GenerateCode(HTNode<CharInfo>* root)
 	}
 	GenerateCode(root->left);
 	GenerateCode(root->right);
+}
+
+
+//解压缩
+//保存：按照行保存解压缩信息
+//读取：按照行方式进行读取
+
+bool FileCompress::UNCompressFile(const string& strFilePath)
+{
+	FILE* fIn = fopen(strFilePath.c_str(), "r");
+	//获取解压缩需要的信息，一次读取一行的内容
+	string szContent;
+	GetLine(fIn, szContent);
+	string postFix = szContent;
+
+	szContent = "";
+	GetLine(fIn, szContent); //"4"
+
+	size_t lineCount = atoi(szContent.c_str());
+	for (size_t i = 0; i < lineCount; i++)
+	{
+		szContent = "";
+		GetLine(fIn, szContent); //"A,1"
+
+		char ch = szContent[0];
+		fileInfo[ch].appearCount = atoi(szContent.c_str() + 2);
+	}
+
+	//还原huffman树
+	HuffmanTree<CharInfo> ht;
+	CharInfo invalid;
+	invalid.appearCount = 0;
+	ht.CreateHuffmanTree(fileInfo, sizeof(fileInfo) / sizeof(fileInfo[0]), invalid);
+	string fileName("3");
+	fileName += postFix;
+	FILE* fOut = fopen(fileName.c_str(), "w");
+
+	//解压缩
+	char readBuff[1024];
+	HTNode<CharInfo>* cur = ht.GetRoot();
+	size_t filesize = cur->weight.appearCount;
+	size_t unCompressSize = 0;
+	while (true)
+	{
+		// 读取压缩数据
+		size_t rdsize = fread(readBuff, 1, 1024, fIn);
+		if (0 == rdsize)
+			break;
+
+		// 逐个对rdBuff中的每个字节进行解析
+		// 按照该字节中的二进制比特位--从高位往低位逐个比特位解析
+		// 解析：就是按照比特位的值去遍历huffman树--一直遍历到叶子节点的位置
+		for (size_t i = 0; i < rdsize; ++i)
+		{
+			// rdBuff[i]
+			char ch = readBuff[i];
+			for (size_t j = 0; j < 8; ++j)
+			{
+				// 检测ch最高是1还是0
+				if (ch & 0x80)
+					cur = cur->right;
+				else
+					cur = cur->left;
+				ch <<= 1;
+				if (NULL == cur->left && NULL == cur->right)
+				{
+					// cur一定是叶子节点
+					fputc(cur->weight.ch, fOut);
+					cur = ht.GetRoot();
+					unCompressSize++;
+					if (filesize == unCompressSize)
+						break;
+				}
+			}
+		}
+	}
+
+	fclose(fIn);
+	fclose(fOut);
+
+	return true;
+}
+//按照行获取文件中内容
+void FileCompress::GetLine(FILE* fIn, string& szContent)
+{
+	while (!feof(fIn))
+	{
+		char ch = fgetc(fIn);
+		if (ch == '\n')
+			return;
+
+		szContent += ch;
+	}
 }
