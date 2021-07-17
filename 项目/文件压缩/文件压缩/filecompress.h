@@ -5,12 +5,14 @@
 #pragma warning(disable:4996)
 using namespace std;
 
+typedef unsigned char uchar;
+
 //字符
 //次数
 //编码
 struct CharInfo
 {
-	char ch;
+	uchar ch;
 	size_t appearCount; //字符出现的次数
 	string strCode; //字符对应的编码
 

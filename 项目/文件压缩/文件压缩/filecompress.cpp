@@ -12,12 +12,12 @@ FileCompress::FileCompress()
 bool FileCompress::CompressFile(const string& strFilePath)
 {
 	//统计源文件中每一个字节出现的次数
-	FILE* pf = fopen(strFilePath.c_str(), "r");
+	FILE* pf = fopen(strFilePath.c_str(), "rb");
 	if (pf == NULL)
 	{
 		return false;
 	}
-	char readBuff[1024];
+	uchar readBuff[1024];
 	while (true)
 	{
 		size_t rdsize = fread(readBuff, 1, 1024, pf);
@@ -41,7 +41,7 @@ bool FileCompress::CompressFile(const string& strFilePath)
 
 	
 	//需要写入解压缩时用到的信息
-	FILE* fOut = fopen("2.txt", "w");
+	FILE* fOut = fopen("22.txt", "wb");
 	if (fOut == NULL)
 	{
 		fclose(pf);
@@ -56,8 +56,8 @@ bool FileCompress::CompressFile(const string& strFilePath)
 
 	//根据找到的编码改写源文件
 	
-	char chBit = 0; //用来防止转换结果的二进制比特位
-	char bitCount = 0; //chBit中放置了几个比特位
+	uchar chBit = 0; //用来防止转换结果的二进制比特位
+	uchar bitCount = 0; //chBit中放置了几个比特位
 
 	//获取源文件的内容
 	fseek(pf, 0, SEEK_SET);
@@ -165,7 +165,7 @@ void FileCompress::GenerateCode(HTNode<CharInfo>* root)
 
 bool FileCompress::UNCompressFile(const string& strFilePath)
 {
-	FILE* fIn = fopen(strFilePath.c_str(), "r");
+	FILE* fIn = fopen(strFilePath.c_str(), "rb");
 	//获取解压缩需要的信息，一次读取一行的内容
 	string szContent;
 	GetLine(fIn, szContent);
@@ -179,8 +179,14 @@ bool FileCompress::UNCompressFile(const string& strFilePath)
 	{
 		szContent = "";
 		GetLine(fIn, szContent); //"A,1"
+		if (szContent == "")
+		{
+			//遇到的是\n
+			szContent += "\n";
+			GetLine(fIn, szContent);
+		}
 
-		char ch = szContent[0];
+		uchar ch = szContent[0];
 		fileInfo[ch].appearCount = atoi(szContent.c_str() + 2);
 	}
 
@@ -189,12 +195,12 @@ bool FileCompress::UNCompressFile(const string& strFilePath)
 	CharInfo invalid;
 	invalid.appearCount = 0;
 	ht.CreateHuffmanTree(fileInfo, sizeof(fileInfo) / sizeof(fileInfo[0]), invalid);
-	string fileName("3");
+	string fileName("33");
 	fileName += postFix;
-	FILE* fOut = fopen(fileName.c_str(), "w");
+	FILE* fOut = fopen(fileName.c_str(), "wb");
 
 	//解压缩
-	char readBuff[1024];
+	uchar readBuff[1024];
 	HTNode<CharInfo>* cur = ht.GetRoot();
 	size_t filesize = cur->weight.appearCount;
 	size_t unCompressSize = 0;
@@ -211,7 +217,7 @@ bool FileCompress::UNCompressFile(const string& strFilePath)
 		for (size_t i = 0; i < rdsize; ++i)
 		{
 			// rdBuff[i]
-			char ch = readBuff[i];
+			uchar ch = readBuff[i];
 			for (size_t j = 0; j < 8; ++j)
 			{
 				// 检测ch最高是1还是0
@@ -243,7 +249,7 @@ void FileCompress::GetLine(FILE* fIn, string& szContent)
 {
 	while (!feof(fIn))
 	{
-		char ch = fgetc(fIn);
+		uchar ch = fgetc(fIn);
 		if (ch == '\n')
 			return;
 
