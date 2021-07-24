@@ -2,4 +2,5 @@
 d:\code\项目\文件压缩\文件压缩\filecompress.cpp(7): warning C4267: “=”: 从“size_t”转换到“uchar”，可能丢失数据
   test.cpp
   正在生成代码...
+  LINK : 没有找到 D:\code\项目\文件压缩\Debug\文件压缩.exe 或上一个增量链接没有生成它；正在执行完全链接
   文件压缩.vcxproj -> D:\code\项目\文件压缩\Debug\文件压缩.exe

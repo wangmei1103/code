@@ -15,7 +15,7 @@ struct CharInfo
 	uchar ch;
 	size_t appearCount; //字符出现的次数
 	string strCode; //字符对应的编码
-
+	//重载
 	CharInfo operator+(const CharInfo& ci)const
 	{
 		CharInfo tmp;
@@ -39,7 +39,9 @@ class FileCompress
 {
 public:
 	FileCompress();
+	//文件压缩
 	bool CompressFile(const string& strFilePath);
+	//文件解压缩
 	bool UNCompressFile(const string& strFilePath);
 private:
 	void GenerateCode(HTNode<CharInfo>* root);

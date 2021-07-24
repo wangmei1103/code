@@ -12,7 +12,7 @@ FileCompress::FileCompress()
 bool FileCompress::CompressFile(const string& strFilePath)
 {
 	//统计源文件中每一个字节出现的次数
-	FILE* pf = fopen(strFilePath.c_str(), "rb");
+	FILE* pf = fopen(strFilePath.c_str(), "rb"); //二进制读
 	if (pf == NULL)
 	{
 		return false;

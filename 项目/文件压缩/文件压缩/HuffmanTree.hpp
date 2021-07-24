@@ -5,7 +5,7 @@
 #include<functional>
 #include<iostream>
 using namespace std;
-//实现Huffman树（二叉树）
+//实现Huffman树（二叉树结构）
 template<class W>
 struct HTNode
 {
