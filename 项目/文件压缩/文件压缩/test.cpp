@@ -36,8 +36,8 @@ int main()
 	/*TestHuffmanTree();*/
 
 	FileCompress fc;
-	fc.CompressFile("11.txt");
-	fc.UNCompressFile("22.txt"); 
+	fc.CompressFile("1.txt");
+	fc.UNCompressFile("2.txt"); 
 	
 	return 0;
 }

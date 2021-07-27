@@ -12,7 +12,7 @@ FileCompress::FileCompress()
 bool FileCompress::CompressFile(const string& strFilePath)
 {
 	//统计源文件中每一个字节出现的次数
-	FILE* pf = fopen(strFilePath.c_str(), "rb"); //二进制读
+	FILE* pf = fopen(strFilePath.c_str(), "rb"); 
 	if (pf == NULL)
 	{
 		return false;
@@ -36,12 +36,12 @@ bool FileCompress::CompressFile(const string& strFilePath)
 	invalid.appearCount = 0;
 	ht.CreateHuffmanTree(fileInfo, 256, invalid);
 	
-	//根据huffman树找每个字节的编码
+	//根据huffman树找每个字符的编码
 	GenerateCode(ht.GetRoot());
 
 	
 	//需要写入解压缩时用到的信息
-	FILE* fOut = fopen("22.txt", "wb");
+	FILE* fOut = fopen("2.txt", "wb");
 	if (fOut == NULL)
 	{
 		fclose(pf);
@@ -195,7 +195,7 @@ bool FileCompress::UNCompressFile(const string& strFilePath)
 	CharInfo invalid;
 	invalid.appearCount = 0;
 	ht.CreateHuffmanTree(fileInfo, sizeof(fileInfo) / sizeof(fileInfo[0]), invalid);
-	string fileName("33");
+	string fileName("3");
 	fileName += postFix;
 	FILE* fOut = fopen(fileName.c_str(), "wb");
 
