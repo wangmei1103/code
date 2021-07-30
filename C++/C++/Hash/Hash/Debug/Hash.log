@@ -1,3 +1,3 @@
 ﻿  hash.cpp
-d:\code\c++\c++\hash\hash\hash.cpp(53): warning C4715: “HashTable<int,int>::insert”: 不是所有的控件路径都返回值
-  Hash.vcxproj -> D:\code\C++\C++\Hash\Debug\Hash.exe
+hash2.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall HTable<int,struct std::pair<int,int>,struct Map<int,int>::MapKeyOfValue>::~HTable<int,struct std::pair<int,int>,struct Map<int,int>::MapKeyOfValue>(void)" (??1?$HTable@HU?$pair@HH@std@@UMapKeyOfValue@?$Map@HH@@@@QAE@XZ)，该符号在函数 "public: __thiscall Map<int,int>::~Map<int,int>(void)" (??1?$Map@HH@@QAE@XZ) 中被引用
+D:\code\C++\C++\Hash\Debug\Hash.exe : fatal error LNK1120: 1 个无法解析的外部命令
